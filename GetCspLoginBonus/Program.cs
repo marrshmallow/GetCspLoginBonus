@@ -2,7 +2,7 @@
 
 // Base directory for resolving paths
 string baseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../../..");
-string batchFilePath = Path.Combine(baseDirectory, "Scripts", "OpenCspLoginBonusPage.bat");
+string batchFilePath = Path.Combine(baseDirectory, "Scripts", "CreateShortcut.bat");
 
 // Debug: Print resolved paths
 Console.WriteLine($"Base Directory: {baseDirectory}");
