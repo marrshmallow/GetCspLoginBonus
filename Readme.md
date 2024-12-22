@@ -1,7 +1,7 @@
 ﻿# Table of Contents
 - [GetCspLoginBonus](#getcsploginbonus)
 # GetCspLoginBonus
-Launches Clip Studio Paint and jumps to the Login Bonus page. ~~CELSYS Y U DELETE LOGIN BONUS PAGE FROM HOME~~  
+Launches Clip Studio Paint and jumps to the Login Bonus page. ~~CELSYS Y U DELETE LOGIN BONUS PAGE FROM MENU~~  
 ## How to use
 1. Make a shortcut of `Scripts\OpenCspLoginBonusPage.bat` wherever you want, e.g. drag it to your taskbar for quick access
 2. Mark your calendar and set notification
