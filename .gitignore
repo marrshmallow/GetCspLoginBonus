@@ -1,0 +1,36 @@
+﻿# Ignore build artifacts for all projects
+**/bin/
+**/obj/
+**/out/
+
+# Ignore Rider IDE-specific files and folders
+.idea/
+.idea_modules/
+*.iml
+*.iws
+*.ipr
+
+# Ignore DotNet-specific files
+*.user
+*.suo
+*.sln.docstates
+
+# Logs
+*.log
+*.tlog
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.DS_Store
+
+# OS-specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider workspace files (Optional, only for local use)
+workspace.xml
+tasks.xml
