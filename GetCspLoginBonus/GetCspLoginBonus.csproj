@@ -1,10 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>true</PublishTrimmed>
+    <DebugType>none</DebugType>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <ApplicationIcon>Icon/icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts/CreateShortcut.ps1" />
+    <EmbeddedResource Include="Scripts/OpenCspLoginBonusPage.ps1" />
+    <EmbeddedResource Include="Scripts/OpenCspLoginBonusPage.bat" />
+    <EmbeddedResource Include="Icon/icon.ico" />
+  </ItemGroup>
+
 
 </Project>
