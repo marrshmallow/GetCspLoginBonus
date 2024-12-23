@@ -10,6 +10,7 @@
     <PublishTrimmed>true</PublishTrimmed>
     <DebugType>none</DebugType>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <AssemblyName>CreateCspShortcut</AssemblyName>
     <ApplicationIcon>Icon/icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>

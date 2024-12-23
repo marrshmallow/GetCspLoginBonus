@@ -17,6 +17,21 @@ internal static class Program
         // Base directory for resolving paths
         string ps1Path = Path.Combine(PermanentPath, "CreateShortcut.ps1");
         RunPowerShellScript(ps1Path);
+        DeleteFile(ps1Path);
+        DeleteFile(Process.GetCurrentProcess().MainModule?.FileName);
+    }
+
+    private static void DeleteFile(string? filePath)
+    {
+        if (string.IsNullOrWhiteSpace(filePath))
+        {
+            return;
+        }
+
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
     }
 
     private static void SetupFiles()

@@ -13,7 +13,7 @@ This creates a shortcut of `cmd.exe` that launches CSP installed in your compute
 ## How to Use
 1. Mark your calendar and set notification.
 2. Download the `.zip` file from the [Release page](about:blank).
-3. Unzip (to a new folder) and run the `GetCspLoginBonus.exe` file. This will create a shortcut in the same directory.
+3. Unzip (to a new folder) and run the `CreateCspShortcut.exe` file. This will create a shortcut in the same directory.
 4. Drag the shortcut to your taskbar and vice versa.
 5. Hit the created shortcut `LaunchCspLoginBonusPage` and never miss a single day.
 
