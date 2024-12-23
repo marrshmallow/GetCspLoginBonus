@@ -5,9 +5,9 @@ $currentDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 $batFilePath = Join-Path -Path $currentDir -ChildPath "OpenCspLoginBonusPage.bat"
 
 # Define the path to the icon
-$iconPath = Join-Path -Path (Join-Path -Path $currentDir -ChildPath "..\Icon") -ChildPath "icon.ico"
+$iconPath = Join-Path -Path $currentDir -ChildPath "icon.ico"
 
-# Define where the shortcut should be created (same directory as the batch file)
+# Define where the shortcut should be created
 $shortcutPath = Join-Path -Path $currentDir -ChildPath "LaunchCspLoginBonusPage.lnk"
 
 # Create a WScript.Shell COM object

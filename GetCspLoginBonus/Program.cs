@@ -1,52 +1,72 @@
-﻿using System.Diagnostics;
+﻿namespace GetCspLoginBonus;
 
-// Base directory for resolving paths
-string baseDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../../..");
-string batchFilePath = Path.Combine(baseDirectory, "Scripts", "CreateShortcut.bat");
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
-// Debug: Print resolved paths
-Console.WriteLine($"Base Directory: {baseDirectory}");
-Console.WriteLine($"Batch File Path: {batchFilePath}");
-
-// Check if the batch file exists
-if (!File.Exists(batchFilePath))
+internal static class Program
 {
-    Console.WriteLine("No batch file found.");
-    return;
-}
-
-try
-{
-    var processInfo = new ProcessStartInfo
+    private static readonly string PermanentPath = AppDomain.CurrentDomain.BaseDirectory;
+    
+    [STAThread]
+    private static void Main()
     {
-        FileName = batchFilePath,
-        WorkingDirectory = Path.Combine(baseDirectory, "Scripts"),
-        UseShellExecute = false,
-        RedirectStandardOutput = true,
-        RedirectStandardError = true,
-        CreateNoWindow = true
-    };
+        SetupFiles();
+            
+        // Base directory for resolving paths
+        string ps1Path = Path.Combine(PermanentPath, "CreateShortcut.ps1");
+        RunPowerShellScript(ps1Path);
+    }
 
-    using var process = Process.Start(processInfo);
-    if (process != null)
+    private static void SetupFiles()
     {
-        string output = process.StandardOutput.ReadToEnd();
-        string error = process.StandardError.ReadToEnd();
+        // Extract resources
+        string shortcutCreatorPath = Path.Combine(PermanentPath, "CreateShortcut.ps1");
+        string pageOpenerPath = Path.Combine(PermanentPath, "OpenCspLoginBonusPage.ps1");
+        string pageOpenerWrapperPath = Path.Combine(PermanentPath, "OpenCspLoginBonusPage.bat");
+        string iconPath = Path.Combine(PermanentPath, "icon.ico");
+        ExtractResource("GetCspLoginBonus.Scripts.CreateShortcut.ps1", shortcutCreatorPath);
+        ExtractResource("GetCspLoginBonus.Scripts.OpenCspLoginBonusPage.ps1", pageOpenerPath);
+        ExtractResource("GetCspLoginBonus.Scripts.OpenCspLoginBonusPage.bat", pageOpenerWrapperPath);
+        ExtractResource("GetCspLoginBonus.Icon.icon.ico", iconPath);
+        HideFile(shortcutCreatorPath);
+        HideFile(pageOpenerPath);
+        HideFile(pageOpenerWrapperPath);
+        HideFile(iconPath);
+        Console.WriteLine("Successfully extracted all resources.");
+    }
 
-        process.WaitForExit();
-        Console.WriteLine($"Batch file output: {output}");
+    private static void HideFile(string iconPath)
+    {
+        File.SetAttributes(iconPath, FileAttributes.Hidden);
+    }
 
-        if (!string.IsNullOrWhiteSpace(error))
+    private static void ExtractResource(string resourceName, string outputPath)
+    {
+        var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
+        using var fileStream = new FileStream(outputPath, FileMode.Create, FileAccess.Write);
+        stream?.CopyTo(fileStream);
+    }
+
+    private static void RunPowerShellScript(string scriptPath)
+    {
+        var processInfo = new ProcessStartInfo
         {
-            Console.WriteLine($"Error: {error}");
+            FileName = "powershell.exe",
+            Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"",
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            CreateNoWindow = true
+        };
+
+        using var process = Process.Start(processInfo);
+        if (process != null)
+        {
+            string output = process.StandardOutput.ReadToEnd();
+            string error = process.StandardError.ReadToEnd();
+            process.WaitForExit();
         }
     }
-    else
-    {
-        Console.WriteLine("Process is null.");
-    }
-}
-catch (Exception e)
-{
-    Console.WriteLine($"Error Starting Process: {e.Message}");
 }
