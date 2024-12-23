@@ -4,8 +4,7 @@
 ---
 
 # GetCspLoginBonus  
-Launches Clip Studio Paint and jumps to the Login Bonus page. ~~CELSYS Y U DELETE LOGIN BONUS PAGE FROM MENU~~  
-This creates a shortcut of `cmd.exe` that launches CSP installed in your computer and make it directly jump to the event page. This does not include, alter, nor backward-engineer said software. 
+Launches Clip Studio Paint and jumps to the Login Bonus page. This creates a shortcut of `cmd.exe` that launches CSP installed in your computer and make it directly jump to the event page. This does not include, alter, nor backward-engineer said software.  
 
 ## Security Disclaimer  
 - Only download this program **directly from the official GitHub repository**: [GitHub Link](https://github.com/marrshmallow/PowerShellApps/)
@@ -19,7 +18,8 @@ This creates a shortcut of `cmd.exe` that launches CSP installed in your compute
 4. Drag the shortcut to your taskbar and vice versa.
 5. Hit the created shortcut `LaunchCspLoginBonusPage` and never miss a single day.
 
-I don't know which is more tedious -- scrolling down to find and click on the thumbnail of the event page, or writing and documenting this stuff ___\*punchline sting\*___
+I don't know which is more tedious -- scrolling down to find and click on the thumbnail of the event page, or writing and documenting this stuff ___\*punchline sting\*___ 
+Also, yes, I am aware of the semi-transparent claim bonus button that does the exact same thing. I just found that button after I made this for one whole day...  
 
 ## Uninstallation  
 Simply delete the `.exe` file and any extracted files (e.g., `.ps1`, `.bat`, `.ico`). I recommend extracting the file to a folder and delete the whole folder.
