@@ -1,8 +1,3 @@
-﻿# Table of Contents
-- [GetCspLoginBonus](#getcsploginbonus)
-
----
-
 # GetCspLoginBonus  
 Launches Clip Studio Paint and jumps to the Login Bonus page. This creates a shortcut of `cmd.exe` that launches CSP installed in your computer and make it directly jump to the event page. This does not include, alter, nor backward-engineer said software.  
 
