@@ -7,7 +7,7 @@ Launches Clip Studio Paint and jumps to the Login Bonus page. This creates a sho
 
 ## How to Use  
 1. Mark your calendar and set notification.
-2. Download the `.zip` file from the [Release page](https://github.com/marrshmallow/PowerShellApps/releases/tag/v.1.0.0).
+2. Download the `.zip` file from the [Release page](https://github.com/marrshmallow/PowerShellApps/releases/).
 3. Unzip (to a new folder) and run the `CreateCspShortcut.exe` file. This will create a shortcut in the same directory.
 4. Drag the shortcut to your taskbar and vice versa.
 5. Hit the created shortcut `LaunchCspLoginBonusPage` and never miss a single day.
