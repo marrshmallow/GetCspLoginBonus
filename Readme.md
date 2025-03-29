@@ -2,7 +2,7 @@
 Launches Clip Studio Paint and jumps to the Login Bonus page. This creates a shortcut of `cmd.exe` that launches CSP installed in your computer and make it directly jump to the event page. This does not include, alter, nor backward-engineer said software.  
 
 ## Security Disclaimer  
-- Only download this program **directly from the official GitHub repository**: [GitHub Link](https://github.com/marrshmallow/PowerShellApps/)
+- Only download this program **directly from the official GitHub repository**: [GitHub Link](https://github.com/marrshmallow/GetCspLoginBonus/releases)
 - Do _**NOT**_ run this program if you obtained it from an untrusted or unofficial source.
 - The program extracts files (e.g., `.ps1` and `.bat`) required for functionality. Tampered files can be harmful.
 
